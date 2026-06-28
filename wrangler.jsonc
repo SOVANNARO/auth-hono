@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "auth-hono",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-06-28",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "auth-hono-db",
+			"database_id": "6dd8c753-2247-4eb5-bd4d-25315ce81a80",
+			"remote": true
+		}
+	]
+}
