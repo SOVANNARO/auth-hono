@@ -1,18 +1,18 @@
-import { Hono } from 'hono'
-import { cors } from 'hono/cors'
-import auth from './routes/auth'
-import userRoutes from './routes/users'
+import { Hono } from "hono";
+import { cors } from "hono/cors";
+import auth from "./routes/auth";
+import userRoutes from "./routes/users";
 
-type Bindings = { DB: D1Database; JWT_SECRET: string }
-type Variables = { userId: number; userEmail: string }
+type Bindings = { DB: D1Database; JWT_SECRET: string };
+type Variables = { userId: number; userEmail: string };
 
-const app = new Hono<{ Bindings: Bindings; Variables: Variables }>()
+const app = new Hono<{ Bindings: Bindings; Variables: Variables }>();
 
-app.use('/*', cors())
+app.use("/*", cors());
 
-app.route('/auth', auth)
-app.route('/users', userRoutes)
+app.route("/auth", auth);
+app.route("/users", userRoutes);
 
-app.get('/', (c) => c.json({ message: 'Auth API' }))
+app.get("/", (c) => c.json({ message: "Auth API" }));
 
-export default app
+export default app;
